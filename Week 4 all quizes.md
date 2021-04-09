@@ -137,5 +137,19 @@ print(get_word("This is a lesson about lists", 4)) # Should print: lesson
 print(get_word("This is a lesson about lists", -4)) # Nothing
 print(get_word("Now we are cooking!", 1)) # Should print: Now
 print(get_word("Now we are cooking!", 5)) # Nothing
-```    
+```   
+````
+##Question 3
 
+Try out the enumerate function for yourself in this quick exercise. Complete the skip_elements function to return every other element from the list, this time using the enumerate function to check if an element is on an even position or an odd position.
+``` python
+def skip_elements(elements):
+    list=[]
+    for index,element in enumerate(elements):
+        if index%2==0:
+            list.append('{}'.format(element))
+    return list
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+````
