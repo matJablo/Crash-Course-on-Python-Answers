@@ -235,7 +235,8 @@ print(octal_to_string(750)) # Should be rwxr-x---
 print(octal_to_string(600)) # Should be rw-------
 ````
 
-##Dictionaries
+##Practice Quiz: Dictionaries
+
 
 ##Question 1
 
@@ -251,3 +252,181 @@ def email_list(domains):
 
 print(email_list({"gmail.com": ["clark.kent", "diana.prince", "peter.parker"], "yahoo.com": ["barbara.gordon", "jean.grey"], "hotmail.com": ["bruce.wayne"]}))
 ```    
+
+##Question 2
+
+The groups_per_user function receives a dictionary, which contains group names with the list of users. Users can belong to multiple groups. Fill in the blanks to return a dictionary with the users as keys and a list of their groups as values. 
+
+
+``` python
+def groups_per_user(group_dictionary):
+    user_groups = {}
+    for group, users in group_dictionary.items():
+        for user in users:
+            if user not in user_groups:
+                user_groups[user] = []
+            user_groups[user].append(group)
+    return user_groups
+print(groups_per_user({"local": ["admin", "userA"],
+		"public":  ["admin", "userB"],
+		"administrator": ["admin"] }))
+```    
+
+##Question 3
+
+The add_prices function returns the total price of all of the groceries in the  dictionary. Fill in the blanks to complete this function.
+
+
+
+``` python
+def groups_per_user(group_dictionary):
+    user_groups = {}
+    for group, users in group_dictionary.items():
+        for user in users:
+            if user not in user_groups:
+                user_groups[user] = []
+            user_groups[user].append(group)
+    return user_groups
+print(groups_per_user({"local": ["admin", "userA"],
+		"public":  ["admin", "userB"],
+		"administrator": ["admin"] }))
+```    
+##Module 4 Graded Assessment
+
+
+
+##Question 1
+
+The format_address function separates out parts of the address string into new strings: house_number and street_name, and returns: "house number X on street named Y". The format of the input string is: numeric house number, followed by the street name which may contain numbers, but never by themselves, and could be several words long. For example, "123 Main Street", "1001 1st Ave", or "55 North Center Drive". Fill in the gaps to complete this function.
+
+
+``` python
+def format_address(address_string):
+      house_number = ''
+      street_name = ''
+      parts = address_string.split(' ',1)
+      house_number += parts[0]
+      street_name += parts[1]
+    
+    
+      return "house number {} on street named {}".format(house_number,street_name)
+    
+    
+      return "house number {} on street named {}".format(house_number,street_name)
+
+print(format_address("123 Main Street"))
+# Should print: "house number 123 on street named Main Street"
+
+print(format_address("1001 1st Ave"))
+# Should print: "house number 1001 on street named 1st Ave"
+
+print(format_address("55 North Center Drive"))
+# Should print "house number 55 on street named North Center Drive"
+```  
+
+##Question 2
+
+The highlight_word function changes the given word in a sentence to its upper-case version. For example, highlight_word("Have a nice day", "nice") returns "Have a NICE day". Can you write this function in just one line?
+
+
+
+``` python
+def highlight_word(sentence, word):
+	return(sentence.capitalize(),word )
+
+print(highlight_word("Have a nice day", "nice"))
+print(highlight_word("Shhh, don't be so loud!", "loud"))
+print(highlight_word("Automating with Python is fun", "fun"))
+```    
+
+##Question 3
+
+A professor with two assistants, Jamie and Drew, wants an attendance list of the students, in the order that they arrived in the classroom. Drew was the first one to note which students arrived, and then Jamie took over. After the class, they each entered their lists into the computer and emailed them to the professor, who needs to combine them into one, in the order of each student's arrival. Jamie emailed a follow-up, saying that her list is in reverse order. Complete the steps to combine them into one list as follows: the contents of Drew's list, followed by Jamie's list in reverse order, to get an accurate list of the students as they arrived.
+
+
+
+
+``` python
+def combine_lists(list1, list2):
+  # Generate a new list containing the elements of list2
+  
+  # Followed by the elements of list1 in reverse order
+  Jamies_list=list2
+  for i in reversed(range(len(list1))):
+    Drews_list.append(list1[i])
+  return Drews_list
+
+	
+Jamies_list = ["Alice", "Cindy", "Bobby", "Jan", "Peter"]
+Drews_list = ["Mike", "Carol", "Greg", "Marcia"]
+
+print(combine_lists(Jamies_list,Drews_list))
+```    
+
+##Question 4
+
+Use a list comprehension to create a list of squared numbers (n*n). The function receives the variables start and end, and returns a list of squares of consecutive numbers between start and end inclusively.
+For example, squares(2, 3) should return [4, 9]
+
+
+
+``` python
+def squares(start, end):
+	return [ n*n for n in range(start, end+1) ]
+
+print(squares(2, 3)) # Should be [4, 9]
+print(squares(1, 5)) # Should be [1, 4, 9, 16, 25]
+print(squares(0, 10)) # Should be [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```    
+
+##Question 5
+
+Complete the code to iterate through the keys and values of the car_prices dictionary, printing out some information about each one.
+
+
+
+
+``` python
+def squares(start, end):
+	return [ n*n for n in range(start, end+1) ]
+
+print(squares(2, 3)) # Should be [4, 9]
+print(squares(1, 5)) # Should be [1, 4, 9, 16, 25]
+print(squares(0, 10)) # Should be [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```   
+
+##Question 5
+
+Complete the code to iterate through the keys and values of the car_prices dictionary, printing out some information about each one.
+
+
+
+
+
+``` python
+def car_listing(car_prices):
+  result = ""
+  for keys, values in car_prices.items():
+    result += "{} costs {} dollars".format(keys,values) +"\n"
+  return result
+
+print(car_listing({"Kia Soul":19000, "Lamborghini Diablo":55000, "Ford Fiesta":13000, "Toyota Prius":24000}))
+```   
+
+##Question 6
+
+Complete the code to iterate through the keys and values of the car_prices dictionary, printing out some information about each one.
+
+
+
+
+
+``` python
+def car_listing(car_prices):
+  result = ""
+  for keys, values in car_prices.items():
+    result += "{} costs {} dollars".format(keys,values) +"\n"
+  return result
+
+print(car_listing({"Kia Soul":19000, "Lamborghini Diablo":55000, "Ford Fiesta":13000, "Toyota Prius":24000}))
+```   
