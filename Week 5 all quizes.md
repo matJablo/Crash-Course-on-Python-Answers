@@ -134,3 +134,36 @@ print(max_elevation_city(100000)) # Should print "Cusco, Peru"
 print(max_elevation_city(1000000)) # Should print "Sofia, Bulgaria"
 print(max_elevation_city(10000000)) # Should print ""
 ```   
+
+
+##Question 2 
+
+####The code below defines an *Elevator* class. The elevator has a current floor, it also has a top and a bottom floor that are the minimum and maximum floors it can go to. Fill in the blanks to make the elevator go through the floors requested.
+
+
+``` python
+class Elevator:
+    def __init__(self, bottom, top, current):
+        """Initializes the Elevator instance."""
+        self.bottom=bottom
+        self.top=top
+        self.current=current
+    def __str__(self):
+        """Information about Current floor"""
+        return "Current floor: {}".format(self.current)
+    def up(self):
+        """Makes the elevator go up one floor."""
+        self.current= self.current +1 if self.current<self.top else self.current
+    def down(self):
+        """Makes the elevator go down one floor."""
+        self.current= self.current -1 if self.current>self.bottom else self.current
+
+    def go_to(self, floor):
+        """Makes the elevator go to the specific floor."""
+        self.current=floor
+
+elevator = Elevator(-1, 10, 0)""
+print(max_elevation_city(10000000)) # Should print ""
+```   
+
+we
